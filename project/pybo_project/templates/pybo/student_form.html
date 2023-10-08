@@ -1,0 +1,22 @@
+<!-- 학번 수정하는 폼을 새로 생성하게 되면 자동으로 탭 처리가 되어버린다. -->
+<!-- 따라서 애초에 학생등록 폼을 만드는 것을 선택했다.-->
+{% extends 'base.html' %}
+{% block content %}
+
+<!-- 학번 수정 -->
+<div class="container my-3">
+    <form method="post">
+        {% csrf_token %}
+        {% include "form_errors.html" %}
+        <div class="mb-3">
+            <h3 class="border-bottom my-3 py-2">수정 답변 내용 </h3>
+
+            <textarea class="form-control" name="student_code" id="student_code" rows="2">
+                {{ form.student_code.value|default_if_none:'' }}
+            </textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">저장하기</button>
+    </form>
+</div>
+{% endblock %}

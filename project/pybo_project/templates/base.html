@@ -1,0 +1,25 @@
+{% load static %}
+<!doctype html>
+
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!--bootstrap css zone-->
+        <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
+        
+        <title>Suyeon's Pybo</title>
+    </head>
+    <body>
+        {% include 'navbar.html' %}
+        {% block content %}
+        {% endblock %}
+        <!-- Bootstrap JS zone -->
+        <script src="{% static 'bootstrap.min.js' %}"></script>
+
+        <!--자바 스크립트-->
+        {% block script %}
+        {% endblock %}
+
+    </body>
+</html>
